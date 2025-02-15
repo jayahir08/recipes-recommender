@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Recipe Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+
+        body.dark-mode h1,
+        body.dark-mode h2,
+        body.dark-mode p {
+            color: #f9f9f9;
+            border-color: #666;
+            background-color: #444;
+        }
+
+        body.dark-mode form {
+            background-color: #444;
+            color: #f9f9f9;
+        }
+
+        body.dark-mode input[type="text"] {
+            background-color: #555;
+            color: #f9f9f9;
+            border-color: #666;
+        }
+
+        body.dark-mode ul,
+        body.dark-mode li {
+            background-color: #444;
+            color: #f9f9f9;
+        }
+
+        body.dark-mode a {
+            color: #ff6f61;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6f61;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            margin-top: 60px;
+            padding: 10px;
+            border: 2px solid #aaa;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            font-family: 'Georgia', serif;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #aaa;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            box-shadow: 2px 2px 5px rgba(3, 2, 2, 0.2);
+            text-shadow: 1px 1px 2px rgba(158, 158, 158, 0.1);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px auto;
+            width: 60%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #aaa;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            font-family: 'Georgia', serif;
+            letter-spacing: 0.5px;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+
+        body.dark-mode h1,
+        body.dark-mode h2,
+        body.dark-mode p {
+            color: #f9f9f9;
+            border-color: #666;
+            background-color: #444;
+        }
+
+        body.dark-mode form {
+            background-color: #444;
+            color: #f9f9f9;
+        }
+
+        body.dark-mode input[type="text"] {
+            background-color: #555;
+            color: #f9f9f9;
+            border-color: #666;
+        }
+
+        body.dark-mode ul,
+        body.dark-mode li {
+            background-color: #444;
+            color: #f9f9f9;
+        }
+
+        body.dark-mode a {
+            color: #ff6f61;
+        }
+
+        #dark-mode-toggle {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: transparent;
+            border: 1px solid black;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        #dark-mode-toggle:hover {
+            background-color: rgba(0, 0, 0, 0.151);
+        }
+
+        #dark-mode-toggle .icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            transform: rotate(0deg);
+            transition: transform 0.5s ease;
+        }
+
+        #dark-mode-toggle .icon::before,
+        #dark-mode-toggle .icon::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+
+        #dark-mode-toggle .icon::before,
+        r {
+            width: 24px;
+            height: 24px;
+            background: #ffd700;
+            box-shadow: 0 0 10px #ffd700;
+        }
+
+        #dark-mode-toggle .icon::after {
+            width: 18px;
+            height: 18px;
+            border: 1px solid rgb(248, 248, 248);
+            background: #ffffffa9;
+            box-shadow: 0 0 10px #000000;
+            opacity: 0;
+            transform: translateX(12px);
+
+        }
+
+        body.dark-mode #dark-mode-toggle .icon {
+            transform: rotate(180deg);
+        }
+
+        body.dark-mode #dark-mode-toggle .icon::before {
+            opacity: 0;
+            transform: translateX(-12px);
+        }
+
+        body.dark-mode #dark-mode-toggle .icon::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="dark-mode-toggle">
+        <div class="icon"></div>
+    </button>
+    <h1>Recipe Recommender</h1>
+    <form method="POST">
+        <label for="ingredients">Enter Ingredients (comma-separated):</label><br>
+        <input type="text" id="ingredients" name="ingredients" required><br><br>
+        <input type="submit" value="Get Recommendations">
+    </form>
+
+    {% if recommendations %}
+    <h2>Recommended Recipes:</h2>
+    <ul>
+        {% for recipe in recommendations %}
+        <li>
+            <a href="{{ url_for('recipe_details', srno=recipe['Srno']) }}">
+                <strong style="color: #e2725b;">{{ recipe['RecipeName'] }}</strong>
+            </a><br>
+            <span>Ingredients: {{ recipe['Ingredients'] }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No recommendations found. Try entering different ingredients.</p>
+    {% endif %}
+
+    <script>
+
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+
+            const savedDarkMode = localStorage.getItem('dark-mode');
+            if (savedDarkMode === 'true') {
+                body.classList.add('dark-mode');
+                if (darkModeToggle) {
+                    darkModeToggle.style.border = '2px solid transparent';
+                    darkModeToggle.style.backgroundColor = '#ffffffa9';
+                }
+            }
+
+
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', () => {
+                    body.classList.toggle('dark-mode');
+                    const isDarkMode = body.classList.contains('dark-mode');
+                    localStorage.setItem('dark-mode', isDarkMode);
+
+
+                    if (isDarkMode) {
+                        darkModeToggle.style.border = '2px solid transparent';
+                        darkModeToggle.style.backgroundColor = '#ffffffa9';
+                    } else {
+                        darkModeToggle.style.backgroundColor = 'rgba(0, 0, 0, 0.151)';
+                    }
+                });
+            } else {
+                console.error('Element with ID "dark-mode-toggle" not found.');
+            }
+        });
+    </script>
+</body>
+
+</html>
