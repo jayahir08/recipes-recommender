@@ -55,18 +55,18 @@ This project is a simple web application that recommends recipes based on ingred
 ## Project Structure
 
 
-    recipe_recommender/
 
 <pre>
-├──data
-    └──recipes.csv
-├── templates
-    └── index.html  # HTML template for the user interface
-    └── recipe_details.html  # HTML template for the user interface
-├── app.py  # Main Flask application
-├── app.py  # Main Flask application
-├── requirements.txt  # Project dependencies
-├──README.md
+├──recipe_recommender
+    ├──data
+        └──recipes.csv
+    ├── templates
+        └── index.html  # HTML template for the user interface
+        └── recipe_details.html  # HTML template for the user interface    
+    ├── app.py  # Main Flask application
+    ├── app.py  # Main Flask application
+    ├── requirements.txt  # Project dependencies
+    ├──README.md
 </pre>
 ## Contributing
 
