@@ -63,8 +63,6 @@ This project is a simple web application that recommends recipes based on ingred
 └── templates/<br>
   └── index.html  # HTML template for the user interface<br>
 ├── app.py<br>          # Main Flask application<br>
-├── .env<br>            # Environment variables (not committed)<br>
-├── .gitignore<br>      # Git ignore file<br>
 ├── requirements.txt # Project dependencies<br>
 ├──README.md<br>
 
