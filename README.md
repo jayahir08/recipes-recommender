@@ -59,9 +59,9 @@ This project is a simple web application that recommends recipes based on ingred
     recipe_recommender/
 
 ├──data<br>
-<pre>└──recipes.csv<br>
+<pre>└──recipes.csv<br></pre>
 └── templates/<br>
-<pre>└── index.html  # HTML template for the user interface<br>
+<pre>└── index.html  # HTML template for the user interface<br></pre>
 ├── app.py  # Main Flask application<br>
 ├── requirements.txt  # Project dependencies<br>
 ├──README.md<br>
