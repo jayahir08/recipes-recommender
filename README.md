@@ -12,7 +12,6 @@ This project is a simple web application that recommends recipes based on ingred
 
 *   Python
 *   Flask (web framework)
-*   Spoonacular API
 *   HTML (for the front-end)
 
 ## Setup
@@ -58,14 +57,15 @@ This project is a simple web application that recommends recipes based on ingred
 
     recipe_recommender/
 
-├──data<br>
-<pre>└──recipes.csv</pre><br>
-└── templates/<br>
-<pre>└── index.html  # HTML template for the user interface</pre><br>
-├── app.py  # Main Flask application<br>
-├── requirements.txt  # Project dependencies<br>
-├──README.md<br>
-
+<pre>
+├──data
+└──recipes.csv
+└── templates
+└── index.html  # HTML template for the user interface
+├── app.py  # Main Flask application
+├── requirements.txt  # Project dependencies
+├──README.md
+</pre>
 ## Contributing
 
 Contributions are welcome! Feel free to submit pull requests or open issues.
