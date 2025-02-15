@@ -79,8 +79,8 @@ Contributions are welcome! Feel free to submit pull requests or open issues.
 
 ## Contact
 
-<h2>Jay Ahir</h2>
-<h3>E-mail : a,j.makwana@gmail.com </h3>
-<h3>IG : a_jay_1405</h3>
+[Jay Ahir]
+[E-Mail : a.j.makwana715@gmail.com]
+[iG : a_jay_1405]
 
 " Thank you !! "
