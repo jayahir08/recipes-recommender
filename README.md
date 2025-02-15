@@ -58,15 +58,15 @@ This project is a simple web application that recommends recipes based on ingred
 
     recipe_recommender/
 
-├──data
-  └──recipes.csv
-└── templates/
-  └── index.html  # HTML template for the user interface
-├── app.py          # Main Flask application
-├── .env            # Environment variables (not committed)
-├── .gitignore      # Git ignore file
-├── requirements.txt # Project dependencies
-├──README.md
+├──data<br>
+  └──recipes.csv<br>
+└── templates/<br>
+  └── index.html  # HTML template for the user interface<br>
+├── app.py<br>          # Main Flask application<br>
+├── .env<br>            # Environment variables (not committed)<br>
+├── .gitignore<br>      # Git ignore file<br>
+├── requirements.txt # Project dependencies<br>
+├──README.md<br>
 
 ## Contributing
 
